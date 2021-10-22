@@ -1,6 +1,6 @@
 {
   "name": "truecallerjs",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "description": "truecallerjs",
   "main": "index.js",
   "scripts": {
@@ -9,10 +9,7 @@
   "bin": {
     "truecallerjs": "./bin/index.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sumithemmadi/truecallerjs.git"
-  },
+  "repository": "git+https://github.com/sumithemmadi/truecallerjs.git",
   "keywords": [
     "truecaller",
     "number"
@@ -32,10 +29,8 @@
     "xml2js": "^0.4.23",
     "yargs": "^17.2.1"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "directories": {
     "lib": "lib"
-  }
+  },
+  "private": false
 }
