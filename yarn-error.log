@@ -1,8 +1,8 @@
 Arguments: 
-  /data/data/com.termux/files/usr/bin/node /data/data/com.termux/files/usr/share/yarn/bin/yarn.js publish
+  /bin/node /share/yarn/bin/yarn.js publish
 
 PATH: 
-  /data/data/com.termux/files/home/bin:/data/data/com.termux/files/usr/bin
+  /home/bin:/bin
 
 Yarn version: 
   1.22.15
