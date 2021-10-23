@@ -9,12 +9,24 @@ A module to search phone number details with truecaller.
    * [Truecaller InstallationId](https://github.com/sumithemmadi/truecallerjs#installationId)
 
 ## Installation
+For command line usage install this package globally.
+```bash
+npm install -g truecallerjs
+```
+For more help enter below command
+```bash
+truecallerjs -h
+```
+
+## Basic Usage
+
+### installation
 
 ```bash
 npm install truecallerjs
 ```
-## Usage
 
+### usage
 ```js
 const truecallerjs = require('truecallerjs');
 
