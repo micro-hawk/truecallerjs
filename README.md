@@ -22,7 +22,7 @@ truecallerjs -h
 
 ## Basic Usage
 
-### installation
+### Installation
 
 ```bash
 npm install truecallerjs
@@ -40,7 +40,7 @@ sn.then(function(response) {
 });
 
 ```
-If you use mobile number with dialingCode.
+- If you use mobile number with dialingCode.
 
 ```js
 const truecallerjs = require('truecallerjs');
@@ -54,7 +54,23 @@ sn.then(function(response) {
 ```
 - **MOBILE_NUMBER** : number you want to search
 - **DEFAULT_COUNTRY_CODE** :  If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number as show in first code.
-- **TRUECALLER_INSTALLATION_ID** : To know your installationId  [click here](https://github.com/sumithemmadi/truecallerjs#installationId).
+- **TRUECALLER_INSTALLATION_ID** :  To know your InstallationId , install the package globally.
+-  **InstallationId**
+```
+npm install -g  truecallerjs
+```
+- [Login to you account](https://github.com/sumithemmadi/truecallerjs#Login).
+> After  **Successfully Login** you will see you InstallationId on screen and your installationId will be saved in **authkey.json** in **.secret** folder of this package **node_modules**.
+
+- Enter the below command to see your **InstallationId**.
+```
+truecallerjs --installationid
+```
+or
+```
+truecallerjs -i
+```
+
 
 ## Command Line Usage
 ### Installation 
