@@ -92,12 +92,6 @@ or
 ```
 truecallerjs -i
 ```
-## Searching a number
-Tor search a number enter below command.
-
-```
-truecallerjs -s [number]
-```
 
 
 ## License
