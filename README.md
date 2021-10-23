@@ -13,7 +13,9 @@ For command line usage install this package globally.
 ```bash
 npm install -g truecallerjs
 ```
-For more help enter below command
+For more help [click here](https://github.com/sumithemmadi/truecallerjs/blob/main/README.md#command-line-usage) 
+
+Or enter below command in terminal.
 ```bash
 truecallerjs -h
 ```
