@@ -32,7 +32,7 @@ npm install truecallerjs
 ```js
 const truecallerjs = require('truecallerjs');
 
-// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "YOUR_TRUECALLER_INSTALLATION_ID")
+// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
 
 var sn = truecallerjs.searchNumber("912345678", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
 sn.then(function(response) {
@@ -45,16 +45,16 @@ If you use mobile number with dialingCode.
 ```js
 const truecallerjs = require('truecallerjs');
 
-// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "YOUR_TRUECALLER_INSTALLATION_ID")
+// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
 
 var sn = truecallerjs.searchNumber("+12122005989", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
 sn.then(function(response) {
     console.log(JSON.stringify(response,null,4));
 });
 ```
-- Here,mobile number is an  **US**  number  and default country code is **IN** (indian number).
-
-- If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number.
+- **MOBILE_NUMBER** : number you want to search
+- **DEFAULT_COUNTRY_CODE** :  If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number as show in first code.
+- **TRUECALLER_INSTALLATION_ID** : To know your installationId  [click here](https://github.com/sumithemmadi/truecallerjs#installationId).
 
 ## Command Line Usage
 ### Installation 
