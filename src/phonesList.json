@@ -94,5 +94,45 @@
   {
     "manufacturer": "Vivo",
     "model": "Vivo V21e 5G"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus Nord CE 5G"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus 9 Pro"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus 8T"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus 9"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus 7T"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus 6T"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus Nord 2"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus 7 Pro"
+  },
+  {
+    "manufacturer": "OnePlus",
+    "model": "OnePlus Nord"
+  },
+  {
+    "manufacturer": "Realme",
+    "model": "RMX2185"
   }
 ]
