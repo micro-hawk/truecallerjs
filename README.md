@@ -16,6 +16,7 @@ npm install -g truecallerjs
 For more help [click here](https://github.com/sumithemmadi/truecallerjs/blob/main/README.md#command-line-usage) 
 
 Or enter below command in terminal.
+
 ```bash
 truecallerjs -h
 ```
@@ -29,6 +30,17 @@ npm install truecallerjs
 ```
 
 ### usage
+```js
+const truecallerjs = require('truecallerjs');
+
+var sn = truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
+
+sn.then(function(response) {
+    console.log(JSON.stringify(response,null,4))
+});
+
+```
+- Example
 ```js
 const truecallerjs = require('truecallerjs');
 
