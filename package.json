@@ -1,13 +1,16 @@
 {
   "name": "truecallerjs",
   "version": "1.0.6",
-  "description": "truecallerjs",
+  "description": "truecallerjs :A module to search phone number details with truecaller.",
   "main": "index.js",
   "scripts": {
     "test": "node index.js login"
   },
   "bin": {
     "truecallerjs": "./bin/index.js"
+  },
+  "engines": {
+    "node": ">=12"
   },
   "repository": "git+https://github.com/sumithemmadi/truecallerjs.git",
   "keywords": [
