@@ -1,6 +1,6 @@
 {
   "name": "truecallerjs",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "truecallerjs :A module to search phone number details with truecaller.",
   "main": "index.js",
   "scripts": {
