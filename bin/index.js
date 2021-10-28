@@ -115,15 +115,15 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         // console.log(JSON.parse(searchNum))
         searchNum.then(function(response) {
 
-            if ( argv.n && !argv.r ) {
-                 console.log(response)
+            if ( argv.r && !argv.n ) {
+                 console.log(response);
             } else if ( argv.n && !argv.r ) {
-                 console.log("Name :".blue,response.data.name.yellow)
+                 console.log("Name :".blue,response.data.name.yellow);
             } else if ( argv.n && argv.r ) {
-                 console.log(response.data.name)
+                 console.log(response.data.name);
             } else {
                  const data  = JSON.stringify(response,null,4);
-                 console.log(data)
+                 console.log(data);
             }
         });
     });
