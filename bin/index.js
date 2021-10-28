@@ -102,7 +102,7 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
 
         }
     });
-} else if (argv.s  && !argv._.includes("login")) {
+} else if (argv.s  && !argv._.includes("login") && !argv.i) {
     fs.readFile(authkey, "utf8", (err, jsonString) => {
         if (err) {
             console.log("Please login to your truecaller account".yellow);
@@ -114,11 +114,20 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         let searchNum = truecallerjs.searchNumber(argv.s ,countryCode, installationId);
         // console.log(JSON.parse(searchNum))
         searchNum.then(function(response) {
-            const data  = JSON.stringify(response,null,4);
-            console.log(data);
+
+            if ( argv.n && !argv.r ) {
+                 console.log(response)
+            } else if ( argv.n && !argv.r ) {
+                 console.log("Name :".blue,response.data.name.yellow)
+            } else if ( argv.n && argv.r ) {
+                 console.log(response.data.name)
+            } else {
+                 const data  = JSON.stringify(response,null,4);
+                 console.log(data)
+            }
         });
     });
-} else if (argv.i) {
+} else if (argv.i && !argv.s) {
     fs.readFile(authkey, "utf8", (err, jsonString) => {
         if (err) {
             console.log("Please login to your truecaller account to know your InstallationId".yellow);
@@ -126,7 +135,11 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         }
         let countryCode = JSON.parse(jsonString).phones[0].countryCode;
         let installationId = JSON.parse(jsonString).installationId;
-        console.log("Your InstallationId : ".blue,installationId.yellow);
+        if (argv.r) {
+            console.log(installationId);
+        } else {
+            console.log("Your InstallationId : ".blue,installationId.yellow);
+        }
     });
 } else {
     yargs.showHelp();
