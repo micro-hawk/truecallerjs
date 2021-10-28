@@ -118,9 +118,9 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
             if ( argv.r && !argv.n ) {
                  console.log(response);
             } else if ( argv.n && !argv.r ) {
-                 console.log("Name :".blue,response.data.name.yellow);
+                 console.log("Name :".blue,response.data[0].name.yellow);
             } else if ( argv.n && argv.r ) {
-                 console.log(response.data.name);
+                 console.log(response.data[0].name);
             } else {
                  const data  = JSON.stringify(response,null,4);
                  console.log(data);
