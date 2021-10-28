@@ -43,6 +43,16 @@ const argv = yargs
         description: "To search caller name and related iformation of a number",
         type: "charecter"
     })
+    .option("raw", {
+        alias: "r",
+        description: "Print's raw output",
+        type: "boolean"
+    })
+    .option("name", {
+        alias: "n",
+        description: "Print's user name of phone number ",
+        type: "boolean"
+    })
     .option("installationid", {
         alias: "i",
         description: "shows your InstallationId",
