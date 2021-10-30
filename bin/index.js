@@ -138,7 +138,6 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
                  } else {
                       console.log("Unknown Name");
                  }
-                 console.log(response.data[0].name);
             } else {
                  const data  = JSON.stringify(response,null,4);
                  console.log(data);
