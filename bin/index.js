@@ -114,12 +114,30 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         let searchNum = truecallerjs.searchNumber(argv.s ,countryCode, installationId);
         // console.log(JSON.parse(searchNum))
         searchNum.then(function(response) {
-
             if ( argv.r && !argv.n ) {
                  console.log(response);
             } else if ( argv.n && !argv.r ) {
-                 console.log("Name :".blue,response.data[0].name.yellow);
+                 if ( "data" in response ) {
+                      let data1 = response.data[0];
+                      if( "name" in data1 ) {
+                           console.log("Name :".blue,response.data[0].name.yellow);
+                      } else {
+                           console.log("Name : ".blue,"Unknown Name".yellow);
+                      }
+                 } else {
+                      console.log("Name : ".blue,"Unknown Name".yellow);
+                 }
             } else if ( argv.n && argv.r ) {
+                 if ( "data" in response ) {
+                      let data1 = response.data[0];
+                      if( "name" in data1 ) {
+                           console.log(response.data[0].name);
+                      } else {
+                           console.log("Unknown Name");
+                      }
+                 } else {
+                      console.log("Unknown Name");
+                 }
                  console.log(response.data[0].name);
             } else {
                  const data  = JSON.stringify(response,null,4);
