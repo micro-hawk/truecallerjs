@@ -102,13 +102,76 @@ To search a number enter below command.
 ```
 truecallerjs -s [number]
 ```
+```
+{
+    "data": [
+        {
+            "id": "jsiebejebbeebhee/dnss00w==",
+            "name": "Sumith Emmadi",
+            "score": 0.36058196,
+            "access": "PUBLIC",
+            "enhanced": true,
+            "phones": [
+                {
+                    "e164Format": "+000000000000",
+                    "numberType": "MOBILE",
+                    "nationalFormat": "+000000000000",
+                    "dialingCode": 91,
+                    "countryCode": "IN",
+                    "carrier": "Vodafone Idea",
+                    "type": "openPhone"
+                }
+            ],
+            "addresses": [
+                {
+                    "city": "Andhra Pradesh",
+                    "countryCode": "IN",
+                    "timeZone": "+05:30",
+                    "type": "address"
+                }
+            ],
+            "internetAddresses": [],
+            "badges": [],
+            "tags": [],
+            "nameFeedback": {
+                "nameSource": 1,
+                "nameElectionAlgo": ""
+            },
+            "cacheTtl": "",
+            "sources": [],
+            "searchWarnings": [],
+            "surveys": []
+        }
+    ],
+    "provider": "ss-nu",
+    "stats": {
+        "sourceStats": []
+    }
+}
+```
+To get raw out put
+```
+truecallerjs -r -s [number]
+```
+{"data":[{"id":"jsiebejebbeebhee/dnss00w==","name":"Sumith Emmadi","score":0.36058196,"access":"PUBLIC","enhanced":true,"phones":[{"e164Format":"+000000000000","numberType":"MOBILE","nationalFormat":"+000000000000","dialingCode":91,"countryCode":"IN","carrier":"Vodafone Idea","type":"openPhone"}],"addresses":[{"city":"Andhra Pradesh","countryCode":"IN","timeZone":"+05:30","type":"address"}],"internetAddresses":[],"badges":[],"tags":[],"nameFeedback":{"nameSource":1,"nameElectionAlgo":""},"cacheTtl":"","sources":[],"searchWarnings":[],"surveys":[]}],"provider":"ss-nu","stats":{"sourceStats":[]}}
+```
+
+To print only name 
+```
+truecallerjs -r -s [number]
+```
+```
+~$ truecallerjs -r -s [number]
+Name : Sumith Emmadi
+```
+
+Other command 
+```
+~$ truecallerjs -s [number] -r --name
+Sumith Emmadi
+```
 
 ### InstallationId
-To know your InstallationId , install the package globally.
-
-```
-npm install -g  truecallerjs
-```
 
 > After  **Successfully Login** your InstallationId will be saved as **authkey.json** in **.secret** folder of this package **node_modules**.
 
@@ -121,6 +184,6 @@ or
 truecallerjs -i
 ```
 
-
+truecallerjs
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsumithemmadi%2Ftruecallerjs.svg?type=large)](https://github.com/sumithemmadi/truecallerjs/)
