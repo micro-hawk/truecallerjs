@@ -115,7 +115,7 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         // console.log(JSON.parse(searchNum))
         searchNum.then(function(response) {
             if ( argv.r && !argv.n ) {
-                 console.log(response);
+                 console.log(JSON.stringify(response));
             } else if ( argv.n && !argv.r ) {
                  if ( "data" in response ) {
                       let data1 = response.data[0];
