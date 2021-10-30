@@ -159,10 +159,10 @@ truecallerjs -r -s [number]
 
 To print only name 
 ```bash
-truecallerjs -r -s [number]
+truecallerjs -s [number] --name
 ```
 ```bash
-~$ truecallerjs -r -s [number]
+~$ truecallerjs -s [number] --name
 Name : Sumith Emmadi
 ```
 
