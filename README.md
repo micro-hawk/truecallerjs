@@ -1,9 +1,10 @@
 # Truecallerjs
-[![Known Vulnerabilities](https://snyk.io/test/npm/truecallerjs/badge.svg)](https://github.com/sumithemmadi/truecallerjs)
 [![weekly Download](https://img.shields.io/npm/dt/truecallerjs.svg)](https://github.com/sumithemmadi/truecallerjs)
 [![Version](https://img.shields.io/npm/v/truecallerjs.svg)](https://github.com/sumithemmadi/truecallerjs)
 [![License](https://img.shields.io/npm/l/truecallerjs.svg)](https://github.com/sumithemmadi/truecallerjs)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsumithemmadi%2Ftruecallerjs.svg?type=shield)](https://github.com/sumithemmadi/truecallerjs)
+[![Known Vulnerabilities](https://snyk.io/test/npm/truecallerjs/badge.svg)](https://github.com/sumithemmadi/truecallerjs)
+[![Maintenance](https://img.shields.io/npms-io/maintenance-score/truecallerjs)](https://github.com/sumithemmadi/truecallerjs)
 
 A simple  package to search phone number details
 
