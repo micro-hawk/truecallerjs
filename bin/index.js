@@ -96,7 +96,7 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
                 }
             })
             .catch(function (error) {
-                console.error("Error".red)
+                console.error("Error".red);
             });
 
         } else {
@@ -106,7 +106,7 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         }
     })
     .catch(function (error) {
-        console.error("Error".red)
+        console.error("Error".red);
     });
 } else if (argv.s  && !argv._.includes("login") && !argv.i) {
     fs.readFile(authkey, "utf8", (err, jsonString) => {
@@ -120,7 +120,9 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         let searchNum = truecallerjs.searchNumber(argv.s ,countryCode, installationId);
         // console.log(JSON.parse(searchNum))
         searchNum.then(function(response) {
-            if ( argv.r && !argv.n ) {
+            if ( response == '""' ) {
+                 console.log("Error in input".red);
+            } else if ( argv.r && !argv.n ) {
                  console.log(JSON.stringify(response));
             } else if ( argv.n && !argv.r ) {
                  if ( "data" in response ) {
@@ -150,7 +152,7 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
             }
         })
         .catch(function (error) {
-             console.error("Error".red)
+             console.error("Error".red);
         });
     });
 } else if (argv.i && !argv.s) {
