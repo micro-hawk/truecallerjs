@@ -21,67 +21,6 @@ Or enter below command in terminal.
 truecallerjs -h
 ```
 
-## Basic Usage
-
-### Installation
-
-```bash
-npm install truecallerjs
-```
-
-### usage
-```js
-const truecallerjs = require('truecallerjs');
-
-var sn = truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
-
-sn.then(function(response) {
-    console.log(JSON.stringify(response,null,4))
-});
-
-```
-- Example
-```js
-const truecallerjs = require('truecallerjs');
-
-// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
-
-var sn = truecallerjs.searchNumber("912345678", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
-sn.then(function(response) {
-    console.log(JSON.stringify(response,null,4))
-});
-
-```
-- If you use mobile number with dialingCode.
-
-```js
-const truecallerjs = require('truecallerjs');
-
-// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
-
-var sn = truecallerjs.searchNumber("+12122005989", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
-sn.then(function(response) {
-    console.log(JSON.stringify(response,null,4));
-});
-```
-- **MOBILE_NUMBER** : number you want to search
-- **DEFAULT_COUNTRY_CODE** :  If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number as show in first code.
-- **TRUECALLER_INSTALLATION_ID** :  To know your InstallationId , install the package globally.
--  **InstallationId**
-```bash
-npm install -g  truecallerjs
-```
-- [Login to you account](https://github.com/sumithemmadi/truecallerjs#Login).
-> After  **Successfully Login** you will see you InstallationId on screen and your installationId will be saved in **authkey.json** in **.secret** folder of this package **node_modules**.
-
-- Enter the below command to see your **InstallationId**.
-```bash
-truecallerjs --installationid
-```
-or
-```bash
-truecallerjs -i
-```
 
 
 ## Command Line Usage
@@ -149,7 +88,7 @@ truecallerjs -s [number]
     }
 }
 ```
-To get raw out put
+To get raw output
 ```bash
 truecallerjs -r -s [number]
 ```
@@ -174,17 +113,71 @@ Sumith Emmadi
 
 ### InstallationId
 
-> After  **Successfully Login** your InstallationId will be saved as **authkey.json** in **.secret** folder of this package **node_modules**.
-
 Enter the below command to see your **InstallationId**.
 ```bash
 truecallerjs --installationid
 ```
-or
+Print's only installation Id.
 ```bash
-truecallerjs -i
+truecallerjs -i -r
 ```
 
-truecallerjs
+## Basic Usage
+
+#### Installation
+
+```bash
+npm install truecallerjs
+```
+
+#### Usage
+```js
+const truecallerjs = require('truecallerjs');
+
+var sn = truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
+
+sn.then(function(response) {
+    console.log(JSON.stringify(response,null,4))
+});
+
+```
+- Example
+```js
+const truecallerjs = require('truecallerjs');
+
+// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
+
+var sn = truecallerjs.searchNumber("912345678", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
+sn.then(function(response) {
+    console.log(JSON.stringify(response,null,4))
+});
+
+```
+- If you use mobile number with dialingCode.
+
+```js
+const truecallerjs = require('truecallerjs');
+
+// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
+
+var sn = truecallerjs.searchNumber("+12122005989", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
+sn.then(function(response) {
+    console.log(JSON.stringify(response,null,4));
+});
+```
+- **MOBILE_NUMBER** : number you want to search
+- **DEFAULT_COUNTRY_CODE** :  If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number as show in first code.
+- **TRUECALLER_INSTALLATION_ID** :  To know your InstallationId , install the package globally.
+-  **InstallationId**
+```bash
+npm install -g  truecallerjs
+```
+- [Login to you account](https://github.com/sumithemmadi/truecallerjs#Login).
+- Enter the below command to see your **InstallationId**.
+
+```bash
+truecallerjs --installationid
+```
+
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsumithemmadi%2Ftruecallerjs.svg?type=large)](https://github.com/sumithemmadi/truecallerjs/)
