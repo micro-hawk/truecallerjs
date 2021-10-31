@@ -94,6 +94,9 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
                 } else {
                     console.log("Oops... somthing went wrong.".red);
                 }
+            })
+            .catch(function (error) {
+                console.error("Error".red)
             });
 
         } else {
@@ -101,6 +104,9 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
             process.exit();
 
         }
+    })
+    .catch(function (error) {
+        console.error("Error".red)
     });
 } else if (argv.s  && !argv._.includes("login") && !argv.i) {
     fs.readFile(authkey, "utf8", (err, jsonString) => {
@@ -142,6 +148,9 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
                  const data  = JSON.stringify(response,null,4);
                  console.log(data);
             }
+        })
+        .catch(function (error) {
+             console.error("Error".red)
         });
     });
 } else if (argv.i && !argv.s) {
