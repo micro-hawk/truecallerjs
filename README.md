@@ -1,11 +1,14 @@
 # Truecallerjs
+[![Known Vulnerabilities](https://snyk.io/test/npm/truecallerjs/badge.svg)](https://github.com/sumithemmadi/truecallerjs)
+[![weekly Download](https://img.shields.io/npm/dt/truecallerjs.svg)](https://github.com/sumithemmadi/truecallerjs)
+[![Version](https://img.shields.io/npm/v/truecallerjs.svg)](https://github.com/sumithemmadi/truecallerjs)
+[![License](https://img.shields.io/npm/l/truecallerjs.svg)](https://github.com/sumithemmadi/truecallerjs)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsumithemmadi%2Ftruecallerjs.svg?type=shield)](https://github.com/sumithemmadi/truecallerjs)
 
-
-A module to search phone number details with truecaller.
+A simple  package to search phone number details
 
 ## Requirements
-   * Valid Mobile Number( for Truecaller verification)
+   * Valid Mobile Number(Phone number verification for truecaller)
    * [Truecaller InstallationId](https://github.com/sumithemmadi/truecallerjs#installationId)
 
 ## Installation
@@ -36,7 +39,6 @@ Then  login to your truecaller account
 truecallerjs login
 ```
 ### Searching a number
-To search a number enter below command.
 
 ```bash
 truecallerjs -s [number]
@@ -47,7 +49,10 @@ truecallerjs -s [number]
         {
             "id": "jsiebejebbeebhee/dnss00w==",
             "name": "Sumith Emmadi",
-            "score": 0.36058196,
+            "imId": "1g7rm006b356o",
+            "gender": "UNKNOWN",
+            "image": "https://storage.googleapis.com/tc-images-noneu/myview/1/jdvdidbdhvdjdvddbkdbeiebeieb",
+            "score": 0.9,
             "access": "PUBLIC",
             "enhanced": true,
             "phones": [
@@ -76,6 +81,18 @@ truecallerjs -s [number]
                 "nameSource": 1,
                 "nameElectionAlgo": ""
             },
+            "internetAddresses": [
+                {
+                    "id": "email@gmail.com",
+                    "service": "email",
+                    "caption": "Sumith Emmadi",
+                    "type": "internetAddress"
+                }
+            ],
+            "badges": [
+                "verified",
+                "user"
+            ],
             "cacheTtl": "",
             "sources": [],
             "searchWarnings": [],
@@ -93,7 +110,7 @@ To get raw output
 truecallerjs -r -s [number]
 ```
 ```js
-{"data":[{"id":"jsiebejebbeebhee/dnss00w==","name":"Sumith Emmadi","score":0.36058196,"access":"PUBLIC","enhanced":true,"phones":[{"e164Format":"+000000000000","numberType":"MOBILE","nationalFormat":"+000000000000","dialingCode":91,"countryCode":"IN","carrier":"Vodafone Idea","type":"openPhone"}],"addresses":[{"city":"Andhra Pradesh","countryCode":"IN","timeZone":"+05:30","type":"address"}],"internetAddresses":[],"badges":[],"tags":[],"nameFeedback":{"nameSource":1,"nameElectionAlgo":""},"cacheTtl":"","sources":[],"searchWarnings":[],"surveys":[]}],"provider":"ss-nu","stats":{"sourceStats":[]}}
+ {"data":[{"id":"jsiebejebbeebhee/dnss00w==","name":"Sumith Emmadi","imId":"1g7rm006b356o","gender":"UNKNOWN","image":"https://storage.googleapis.com/tc-images-noneu/myview/1/jdvdidbdhvdjdvddbkdbeiebeieb","score":0.9,"access":"PUBLIC","enhanced":true,"phones":[{"e164Format":"+000000000000","numberType":"MOBILE","nationalFormat":"+000000000000","dialingCode":91,"countryCode":"IN","carrier":"Vodafone Idea","type":"openPhone"}],"addresses":[{"city":"Andhra Pradesh","countryCode":"IN","timeZone":"+05:30","type":"address"}],"internetAddresses":[{"id":"email@gmail.com","service":"email","caption":"Sumith Emmadi","type":"internetAddress"}],"badges":["verified","user"],"tags":[],"nameFeedback":{"nameSource":1,"nameElectionAlgo":""},"cacheTtl":"","sources":[],"searchWarnings":[],"surveys":[]}],"provider":"ss-nu","stats":{"sourceStats":[]}}
 ```
 
 To print only name 
@@ -106,6 +123,10 @@ Name : Sumith Emmadi
 ```
 
 Other command 
+```bash
+truecallerjs -s [number] -r --name
+```
+
 ```bash
 ~$ truecallerjs -s [number] -r --name
 Sumith Emmadi
@@ -166,8 +187,8 @@ sn.then(function(response) {
 });
 ```
 - **MOBILE_NUMBER** : number you want to search
-- **DEFAULT_COUNTRY_CODE** :  If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number as show in first code.
-- **TRUECALLER_INSTALLATION_ID** :  To know your InstallationId , install the package globally.
+- **DEFAULT_COUNTRY_CODE** : Country code you want use by default . If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number.
+- **TRUECALLER_INSTALLATION_ID** : To know your InstallationId , install the package globally.
 -  **InstallationId**
 ```bash
 npm install -g  truecallerjs
