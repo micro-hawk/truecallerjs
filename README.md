@@ -28,8 +28,6 @@ Or enter below command in terminal.
 truecallerjs -h
 ```
 
-
-
 ## Command Line Usage
 ### Installation 
 Install this npm package globally.
@@ -135,7 +133,70 @@ truecallerjs -s [number] -r --name
 ~$ truecallerjs -s [number] -r --name
 Sumith Emmadi
 ```
+### Output Formates
+- JSON
+- XML
 
+#### To get Only JSON OutPut
+```bash
+~$ truecallerjs -s [number] --json
+```
+
+#### To get Only XML OutPut
+```bash
+~$ truecallerjs -s [number] --xml
+```
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<root>
+  <data>
+    <id>jsiebejebbeebhee/dnss00w==</id>
+    <name>Sumith Emmadi</name>
+    <imId>1g7rm006b356o</imId>
+    <gender>UNKNOWN</gender>
+    <image>https://storage.googleapis.com/tc-images-noneu/myview/1/jdvdidbdhvdjdvddbkdbeiebeieb</image>
+    <score>0.9</score>
+    <access>PUBLIC</access>
+    <enhanced>true</enhanced>
+    <phones>
+      <e164Format>+000000000000</e164Format>
+      <numberType>MOBILE</numberType>
+      <nationalFormat>+000000000000</nationalFormat>
+      <dialingCode>91</dialingCode>
+      <countryCode>IN</countryCode>
+      <carrier>Vodafone Idea</carrier>
+      <type>openPhone</type>
+    </phones>
+    <addresses>
+      <city>Andhra Pradesh</city>
+      <countryCode>IN</countryCode>
+      <timeZone>+05:30</timeZone>
+      <type>address</type>
+    </addresses>
+    <internetAddresses>
+      <id>email@gmail.com</id>
+      <service>email</service>
+      <caption>Sumith Emmadi</caption>
+      <type>internetAddress</type>
+    </internetAddresses>
+    <badges>verified</badges>
+    <badges>user</badges>
+    <tags/>
+    <nameFeedback>
+      <nameSource>1</nameSource>
+      <nameElectionAlgo></nameElectionAlgo>
+    </nameFeedback>
+    <cacheTtl></cacheTtl>
+    <sources/>
+    <searchWarnings/>
+    <surveys/>
+  </data>
+  <provider>ss-nu</provider>
+  <stats>
+    <sourceStats/>
+  </stats>
+</root>
+```
 ### InstallationId
 
 Enter the below command to see your **InstallationId**.
@@ -146,6 +207,9 @@ Print only installation Id.
 ```bash
 truecallerjs -i -r
 ```
+
+
+
 
 ## Basic Usage
 
