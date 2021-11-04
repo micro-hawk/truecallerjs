@@ -25,7 +25,7 @@ For more help [click here](https://github.com/sumithemmadi/truecallerjs/blob/mai
 Or enter below command in terminal.
 
 ```bash
-truecallerjs -h
+~$ truecallerjs -h
 ```
 
 ## Command Line Usage
@@ -38,12 +38,12 @@ npm install -g  truecallerjs
 ### Login
 Then  login to your truecaller account .
 ```bash
-truecallerjs login
+~$ truecallerjs login
 ```
 ### Searching a number
 
 ```bash
-truecallerjs -s [number]
+~$ truecallerjs -s [number]
 ```
 ```js
 {
@@ -109,7 +109,7 @@ truecallerjs -s [number]
 ```
 To get raw output.
 ```bash
-truecallerjs -r -s [number]
+~$ truecallerjs -r -s [number]
 ```
 ```js
  {"data":[{"id":"jsiebejebbeebhee/dnss00w==","name":"Sumith Emmadi","imId":"1g7rm006b356o","gender":"UNKNOWN","image":"https://storage.googleapis.com/tc-images-noneu/myview/1/jdvdidbdhvdjdvddbkdbeiebeieb","score":0.9,"access":"PUBLIC","enhanced":true,"phones":[{"e164Format":"+000000000000","numberType":"MOBILE","nationalFormat":"+000000000000","dialingCode":91,"countryCode":"IN","carrier":"Vodafone Idea","type":"openPhone"}],"addresses":[{"city":"Andhra Pradesh","countryCode":"IN","timeZone":"+05:30","type":"address"}],"internetAddresses":[{"id":"email@gmail.com","service":"email","caption":"Sumith Emmadi","type":"internetAddress"}],"badges":["verified","user"],"tags":[],"nameFeedback":{"nameSource":1,"nameElectionAlgo":""},"cacheTtl":"","sources":[],"searchWarnings":[],"surveys":[]}],"provider":"ss-nu","stats":{"sourceStats":[]}}
@@ -117,7 +117,7 @@ truecallerjs -r -s [number]
 
 To print only name.
 ```bash
-truecallerjs -s [number] --name
+~$ truecallerjs -s [number] --name
 ```
 ```bash
 ~$ truecallerjs -s [number] --name
@@ -126,7 +126,7 @@ Name : Sumith Emmadi
 
 Other command's
 ```bash
-truecallerjs -s [number] -r --name
+~$ truecallerjs -s [number] -r --name
 ```
 
 ```bash
@@ -137,12 +137,12 @@ Sumith Emmadi
 - JSON
 - XML
 
-#### To get Only JSON OutPut
+#### To get only JSON output
 ```bash
 ~$ truecallerjs -s [number] --json
 ```
 
-#### To get Only XML OutPut
+#### To get XML output
 ```bash
 ~$ truecallerjs -s [number] --xml
 ```
@@ -223,40 +223,27 @@ npm install truecallerjs
 ```js
 const truecallerjs = require('truecallerjs');
 
-var sn = truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
+var searchData = {
+                number: "[PHONE_NUMBER]",
+                countryCode: "[COUNTRY_CODE]",
+                installationId: "[INSTALLATION_ID]",
+                output: "[FORMATE]"
+        }
 
+var sn = truecallerjs.searchNumber(searchData);
 sn.then(function(response) {
-    console.log(JSON.stringify(response,null,4))
+    console.log(response)
 });
 
 ```
-- Example
-```js
-const truecallerjs = require('truecallerjs');
+- **PHONE_NUMBER** : Number you want to search.
+- **COUNTRY_CODE** : Country code you want use by default . If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number.
+- **FORMATE** : Formate of the output.
+     1. JSON
+     2. XML
 
-// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
+- **INSTALLATION_ID** : To know your InstallationId , install the package globally.
 
-var sn = truecallerjs.searchNumber("912345678", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
-sn.then(function(response) {
-    console.log(JSON.stringify(response,null,4))
-});
-
-```
-- If you use mobile number with dialingCode.
-
-```js
-const truecallerjs = require('truecallerjs');
-
-// truecallerjs.searchNumber("MOBILE_NUMBER", "DEFAULT_COUNTRY_CODE", "TRUECALLER_INSTALLATION_ID")
-
-var sn = truecallerjs.searchNumber("+12122005989", 'IN', "YOUR_TRUECALLER_INSTALLATION_ID");
-sn.then(function(response) {
-    console.log(JSON.stringify(response,null,4));
-});
-```
-- **MOBILE_NUMBER** : Number you want to search.
-- **DEFAULT_COUNTRY_CODE** : Country code you want use by default . If mobile number is not in **E164** Format then **Default Country Code** will be considered as a countryCode of that Mobile Number.
-- **TRUECALLER_INSTALLATION_ID** : To know your InstallationId , install the package globally.
 -  **InstallationId**
 ```bash
 npm install -g  truecallerjs
@@ -267,6 +254,40 @@ npm install -g  truecallerjs
 ```bash
 truecallerjs --installationid
 ```
+### Example
+```js
+const truecallerjs = require('truecallerjs');
+
+var searchData = {
+                number: "+919912345678",
+                countryCode: "IN",
+                installationId: "a1k07--Vgdfyvv_rftf5uuudhuhnkljyvvtfftjuhbuijbhug",
+                output: "JSON"
+        }
+
+var sn = truecallerjs.searchNumber(searchData);
+sn.then(function(response) {
+    console.log(response)
+});
+```
+- If you use mobile number with dialingCode.
+
+```js
+const truecallerjs = require('truecallerjs');
+
+var searchData = {
+                number: "9912345678",
+                countryCode: "IN",
+                installationId: "a1k07--Vgdfyvv_rftf5uuudhuhnkljyvvtfftjuhbuijbhug",
+                output: "XML"
+        }
+
+var sn = truecallerjs.searchNumber(searchData);
+sn.then(function(response) {
+    console.log(response)
+});
+```
+
 
 ## License
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fsumithemmadi%2Ftruecallerjs.svg?type=large)](https://github.com/sumithemmadi/truecallerjs/)
