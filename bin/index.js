@@ -141,14 +141,14 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
                          installationId,
                          output:"JSON"
                       }
-                 console.log(searchData);
+                 // console.log(searchData);
         	} else {
         		let searchData = {
         				number : argv.s,
         				countryCode,
         				installationId
         			 }
-        		console.log(searchData)
+        		// console.log(searchData)
         		const response = truecallerjs.searchNumber(searchData)
         		console.log(response)
         	}
