@@ -49,6 +49,9 @@ const argv = yargs.usage("Usage: \n$0  login (Login to truecaller).\n$0 -s [numb
 }).option("json", {
 	description: "Get output in json only",
 	type: "boolean"
+}).option("xml", {
+     description: "Get XML output",
+     type: "boolean"
 }).help().alias("help", "h").argv;
 
 function getAuthKey() {
@@ -113,12 +116,23 @@ if(argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
 	} else {
 		let countryCode = jsonAuthKey.phones[0].countryCode;
 		let installationId = jsonAuthKey.installationId;
-		if(argv.json) {
+		if( argv.json && !argv.xml ) {
 			let searchData = {
 					number: argv.s,
 					countryCode,
 					installationId,
 					output: "JSON"
+				}
+			const searchResult = truecallerjs.searchNumber(searchData)
+			searchResult.then(function(response) {
+				console.log(JSON.stringify(response,null,4))
+			})
+		} else if ( argv.xml && !argv.json ) {
+			let searchData = {
+					number: argv.s,
+					countryCode,
+					installationId,
+					output: "XML"
 				}
 			const searchResult = truecallerjs.searchNumber(searchData)
 			searchResult.then(function(response) {
