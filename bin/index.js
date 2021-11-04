@@ -149,8 +149,10 @@ if (argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
         				installationId
         			 }
         		// console.log(searchData)
-        		const response = truecallerjs.searchNumber(searchData)
-        		console.log(response)
+        		const searchResult = truecallerjs.searchNumber(searchData)
+        		searchResult.then(function(result) {
+        			console.log(result)
+        		})
         	}
         }
 } else if (argv.i && !argv.s) {
