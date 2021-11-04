@@ -120,7 +120,10 @@ if(argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
 					installationId,
 					output: "JSON"
 				}
-				// console.log(searchData);
+			const searchResult = truecallerjs.searchNumber(searchData)
+			searchResult.then(function(response) {
+				console.log(response)
+			})
 		} else {
 			let searchData = {
 					number: argv.s,
