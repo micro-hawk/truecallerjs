@@ -125,7 +125,7 @@ if(argv._.includes("login") && argv._[0] == "login" && argv._.length == 1) {
 				}
 			const searchResult = truecallerjs.searchNumber(searchData)
 			searchResult.then(function(response) {
-				console.log(JSON.stringify(response,null,4))
+				console.log(response)
 			})
 		} else if ( argv.xml && !argv.json ) {
 			let searchData = {
